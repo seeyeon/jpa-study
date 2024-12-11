@@ -3,6 +3,7 @@ package com.ll.jpa.global.initData;
 
 import com.ll.jpa.domain.post.post.eneity.Post;
 import com.ll.jpa.domain.post.post.service.PostService;
+import com.ll.jpa.standard.util.Ut;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
@@ -36,7 +37,10 @@ public class BaseInitData {
         return ApplicationArguments -> {
             System.out.println("BaseInitData2ApplicationRunner");
 
-            postService.findById(1).get();
+            Ut.thread.sleep(1000);
+
+            Post post1 = postService.findById(1).get();
+            postService.modify(post1,"제목 수정됨", "내용 수정됨");
         };
     }
 }

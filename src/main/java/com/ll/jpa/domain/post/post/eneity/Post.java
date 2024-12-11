@@ -2,6 +2,9 @@ package com.ll.jpa.domain.post.post.eneity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
@@ -11,6 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
 public class Post {
     //long => null 안됨
     //Long => null 가능
@@ -18,7 +22,11 @@ public class Post {
     @Id //primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto_increment
     private Long id;
+
+    @CreatedDate
     private LocalDateTime createAt;
+
+    @LastModifiedDate
     private LocalDateTime modifiedAt;
 
     @Column(length=100)
