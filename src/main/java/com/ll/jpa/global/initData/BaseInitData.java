@@ -34,15 +34,9 @@ public class BaseInitData {
     @Order(2)
     public ApplicationRunner BaseInitData2ApplicationRunner(){
         return ApplicationArguments -> {
-
             System.out.println("BaseInitData2ApplicationRunner");
 
-            if(postService.count() >0) return;
-
-            Post post1 = postService.write("title1", "content1");
-            Post post2 = postService.write("title2", "content2");
-            Post post3 = postService.write("title3", "content3");
-
+            postService.findById(1).get();
         };
     }
 }
