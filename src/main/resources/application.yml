@@ -1,7 +1,7 @@
 server:
   port: 8080
 
-Spring:
+spring:
   output:
     ansi:
      enabled: always
@@ -10,3 +10,7 @@ Spring:
     username: sa
     password:
     driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
