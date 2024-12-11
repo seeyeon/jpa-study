@@ -1,6 +1,7 @@
 package com.ll.jpa.domain.post.post.eneity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +10,8 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+
 public class Post {
     //long => null 안됨
     //Long => null 가능
