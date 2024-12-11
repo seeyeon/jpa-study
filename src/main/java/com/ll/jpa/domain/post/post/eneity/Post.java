@@ -21,12 +21,16 @@ public class Post {
     //JPA 엔티티 클래스 특성상 id 필드는 null이 가능하도록 해야함
     @Id //primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto_increment
+    @Setter(AccessLevel.PRIVATE)
+
     private Long id;
 
     @CreatedDate
+    @Setter(AccessLevel.PRIVATE)
     private LocalDateTime createAt;
 
     @LastModifiedDate
+    @Setter(AccessLevel.PRIVATE)
     private LocalDateTime modifiedAt;
 
     @Column(length=100)
