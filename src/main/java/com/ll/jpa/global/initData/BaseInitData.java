@@ -35,13 +35,13 @@ public class BaseInitData {
                 Post post3 = postService.write("title3", "content3");
 
                 //1번 글에 대한 댓글
-                PostComment postComment1 = postCommentService.write(post1.getId(), "comment1");
+                PostComment postComment1 = postCommentService.write(post1, "comment1");
 
                 //2번 글에 대한 댓글
-                PostComment postComment2 = postCommentService.write(post2.getId(), "comment2");
+                PostComment postComment2 = postCommentService.write(post2, "comment2");
 
                 //3번 글에 대한 댓글
-                PostComment postComment3 = postCommentService.write(post3.getId(), "comment3");
+                PostComment postComment3 = postCommentService.write(post3, "comment3");
 
             }
         };

@@ -1,5 +1,6 @@
 package com.ll.jpa.domain.post.comment.entity;
 
+import com.ll.jpa.domain.post.post.eneity.Post;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -31,7 +32,8 @@ public class PostComment {
     @Setter(AccessLevel.PRIVATE)
     private LocalDateTime modifiedAt;
 
-    private long postId; //글번호
+    @ManyToOne //주키 타입이 저장된다.
+    private Post post; //post와 연결되어 있는 리모콘을 가진다.
 
     @Column(columnDefinition = "TEXT")
     private String content;
