@@ -27,4 +27,8 @@ public class PostCommentService {
     public Optional<PostComment> findById(long id) {
         return postCommentRepository.findById(id);
     }
+
+    public void delete(PostComment newPostComment) {
+        postCommentRepository.delete(newPostComment);
+    }
 }
