@@ -6,6 +6,8 @@ import com.ll.jpa.domain.post.post.eneity.Post;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class PostCommentService {
@@ -22,4 +24,7 @@ public class PostCommentService {
     }
 
 
+    public Optional<PostComment> findById(long id) {
+        return postCommentRepository.findById(id);
+    }
 }

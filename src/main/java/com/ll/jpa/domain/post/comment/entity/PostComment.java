@@ -32,7 +32,7 @@ public class PostComment {
     @Setter(AccessLevel.PRIVATE)
     private LocalDateTime modifiedAt;
 
-    @ManyToOne //주키 타입이 저장된다.
+    @ManyToOne(fetch = FetchType.EAGER) //주키 타입이 저장된다.
     private Post post; //post와 연결되어 있는 리모콘을 가진다.
 
     @Column(columnDefinition = "TEXT")
