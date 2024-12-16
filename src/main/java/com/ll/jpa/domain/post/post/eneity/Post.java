@@ -43,7 +43,7 @@ public class Post {
     private boolean blind;
 
     @Builder.Default //new ArrayList<>();로 초기화하고 싶으면 해당 어노테이션 써야함
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL) //매핑관계를 말해줘야 DB에 저장함
+    @OneToMany(mappedBy = "post", cascade = CascadeType.PERSIST) //매핑관계를 말해줘야 DB에 저장함
     private List<PostComment> comments = new ArrayList<>();
 
     public void addComment(String content) {

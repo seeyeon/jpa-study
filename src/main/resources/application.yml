@@ -3,6 +3,8 @@ server:
 
 spring:
   output:
+    profiles:
+      active: dev
     ansi:
      enabled: always
   datasource:
